@@ -25,7 +25,7 @@ func main() {
 
 	}
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Нажмите любую клавишу для завершения")
+	fmt.Print("\n\nНажмите любую клавишу для завершения...")
 	reader.ReadRune()
 
 	os.Exit(0)
@@ -39,7 +39,6 @@ func parseFile(file string) [][]string {
 	slicedName := strings.Split(file, "_")
 	slicedExt := strings.Split(slicedName[len(slicedName)-1], ".")
 	DIST := slicedExt[0]
-	fmt.Println(DIST)
 	// Create a new reader.
 	r := csv.NewReader(bufio.NewReader(f))
 	i := 0
