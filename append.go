@@ -20,7 +20,7 @@ func main() {
 		if strings.Contains(fileName, ".csv") {
 			lines := parseFile(fileName)
 			addLinesToFile(lines)
-			fmt.Printf("Добавлен " + fileName)
+			fmt.Printf("\nДобавлен " + fileName)
 		}
 
 	}
