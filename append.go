@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"io"
 )
-const RESULT_FILE_NAME = "result.xlsx"
+const RESULT_FILE_NAME = "result.csv"
 
 func main() {
 
@@ -17,7 +17,7 @@ func main() {
 	files, _ := ioutil.ReadDir("./")
 	for _, f := range files {
 		fileName := f.Name()
-		if strings.Contains(fileName, ".csv") {
+		if strings.Contains(fileName, ".csv") && !strings.Contains(fileName, RESULT_FILE_NAME) {
 			lines := parseFile(fileName)
 			addLinesToFile(lines)
 			fmt.Printf("\nДобавлен " + fileName)
